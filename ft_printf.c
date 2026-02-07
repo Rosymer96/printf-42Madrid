@@ -12,19 +12,24 @@ int ft_printf(const char *format, ...)
 
     while (format[i])
     {
-        if (format[i] == '%')
+        if (format[i] == '%' && format[i + 1])
         {
-            count += ft_printf_utils(format[i + 1], args);
-            i += 2;
-        }
-        else if (format[i] != '%')
-        {
-            write(1, &format[i], 1);
-            count++;
-            i++;
+            if(ft_strchr("cspdiuxX%", format[i + 1]))
+            {
+                count += ft_printf_utils(format[i + 1], &args);
+                i += 2;
+            }
+            else
+            {
+                count += ft_printf_char(format[i]);
+                i++;
+            }
         }
         else
+        {
+            count += ft_printf_char(format[i]);
             i++;
+        }
     }
     va_end(args);
     return(count);

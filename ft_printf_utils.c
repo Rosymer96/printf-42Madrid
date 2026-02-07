@@ -1,6 +1,6 @@
 #include "ft_printf.h"
 
-int    ft_printf_utils(char format, va_list args)
+int    ft_printf_utils(char format, va_list *args)
 {
     if(format == 'c')
         return(ft_printf_char(va_arg(args, int)));
@@ -9,5 +9,5 @@ int    ft_printf_utils(char format, va_list args)
         return(ft_printf_char('%'));
     }
     else
-        return (0);
-}            
+        return(ft_printf_char(format));
+    }            
