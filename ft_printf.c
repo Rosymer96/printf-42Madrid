@@ -1,4 +1,4 @@
-#include <printf.h>
+#include "ft_printf.h"
 
 int ft_printf(const char *format, ...)
 {
@@ -14,14 +14,17 @@ int ft_printf(const char *format, ...)
     {
         if (format[i] == '%')
         {
-            count += manage_format(format[i + i]);
+            count += ft_printf_utils(format[i + 1], args);
+            i += 2;
+        }
+        else if (format[i] != '%')
+        {
+            write(1, &format[i], 1);
+            count++;
             i++;
         }
         else
-        {
-            write(1, &fmt[i], 1);
-            count++;
-        }
+            i++;
     }
     va_end(args);
     return(count);
