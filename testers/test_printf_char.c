@@ -24,15 +24,15 @@ int main(void)
     printf("%d\n", count);
     printf("%d\n\n", ft_count);
 
-    count = printf("printf: %% %c\n", 'f');
-    ft_count = ft_printf("ft_pri: %% %c\n", 'f');
+    count = printf("printf: %%%c\n", 'f');
+    ft_count = ft_printf("ft_pri: %%%c\n", 'f');
 
     printf("%d\n", count);
     printf("%d\n\n", ft_count);
 
-    count = printf("printf: %% %c\n", NULL);
-    ft_count = ft_printf("ft_pri: %% %c\n", NULL);
-
+    count = printf("printf: %c\n", NULL);
+    ft_count = ft_printf("ft_pri: %c\n", NULL);
+	printf("\n");
     printf("%d\n", count);
     printf("%d\n\n", ft_count);
 
