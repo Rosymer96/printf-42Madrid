@@ -39,4 +39,5 @@ int main(void)
     ft_count = printf("Org Neg : %x\n", -1);
     printf("Mio: %d | Org: %d\n\n", count, ft_count);
 
+    return (0);
 }
