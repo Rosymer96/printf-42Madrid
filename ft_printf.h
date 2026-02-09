@@ -9,6 +9,8 @@ int     ft_printf(const char *format, ...);
 int     ft_printf_utils(char format, va_list args);
 int     ft_printf_char(int c);
 int     ft_printf_str(char *str);
+int     ft_printf_hexa(unsigned long long n, char *base);
+int     ft_printf_ptr(unsigned long long ptr);
 
 
 
