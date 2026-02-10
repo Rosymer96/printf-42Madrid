@@ -1,8 +1,9 @@
 #include "ft_printf.h"
 
-int ft_printf_int(int)
+int     ft_printf_int(int n)
 {
-    int count;
-    count = 0;
-    return(count);
+    long    num;
+
+    num = n;
+    return(ft_putnbr(num));
 }

@@ -42,6 +42,13 @@ int main(void)
     ft_count = ft_printf("ft_printf: %% %% %s\n", str);
     printf("%d\n", count);
     printf("%d\n\n", ft_count);
+
+    printf("=====3 porcentajes =====\n");
+
+    count = printf("printf   : %%%s\n", str);
+    ft_count = ft_printf("ft_printf: %%%s\n", str);
+    printf("%d\n", count);
+    printf("%d\n\n", ft_count);
     
     int c1, c2;
 

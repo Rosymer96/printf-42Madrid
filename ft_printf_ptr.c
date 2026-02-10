@@ -8,6 +8,6 @@ int ft_printf_ptr(unsigned long long ptr)
     if (!ptr)
         return (write(1, "(nil)", 5));
     count += write(1, "0x", 2);
-    count += ft_printf_hexa(ptr, "0123456789abcdef");
+    count += ft_printf_base(ptr, "0123456789abcdef", 16);
     return (count);
 }
