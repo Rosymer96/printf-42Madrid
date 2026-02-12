@@ -1,21 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf_int.c                                    :+:      :+:    :+:   */
+/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rosvela <rosvela@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/02/12 10:42:57 by rosvela           #+#    #+#             */
-/*   Updated: 2026/02/12 10:42:58 by rosvela          ###   ########.fr       */
+/*   Created: 2026/02/03 16:02:18 by rosvela           #+#    #+#             */
+/*   Updated: 2026/02/03 16:02:22 by rosvela          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "libft.h"
 
-int	ft_printf_int(int n)
+void	ft_putstr_fd(char *s, int fd)
 {
-	long	num;
-
-	num = n;
-	return (ft_putnbr(num));
+	if (!s)
+		return ;
+	while (*s)
+	{
+		write(fd, s, 1);
+		s++;
+	}
 }

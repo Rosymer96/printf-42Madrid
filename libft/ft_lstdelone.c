@@ -1,21 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf_int.c                                    :+:      :+:    :+:   */
+/*   ft_lstdelone.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rosvela <rosvela@student.42madrid.com>     +#+  +:+       +#+        */
+/*   By: rosvela <rosvela@student.42madrid.com      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/02/12 10:42:57 by rosvela           #+#    #+#             */
-/*   Updated: 2026/02/12 10:42:58 by rosvela          ###   ########.fr       */
+/*   Created: 2026/02/03 12:55:06 by rosvela           #+#    #+#             */
+/*   Updated: 2026/02/05 12:28:37 by rosvela          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "libft.h"
 
-int	ft_printf_int(int n)
+void	ft_lstdelone(t_list *lst, void (*del)(void *))
 {
-	long	num;
-
-	num = n;
-	return (ft_putnbr(num));
+	if (!lst || !del)
+		return ;
+	del(lst->content);
+	free(lst);
 }

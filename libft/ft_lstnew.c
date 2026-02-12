@@ -1,21 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf_int.c                                    :+:      :+:    :+:   */
+/*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rosvela <rosvela@student.42madrid.com>     +#+  +:+       +#+        */
+/*   By: rosvela <rosvela@student.42madrid.com      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/02/12 10:42:57 by rosvela           #+#    #+#             */
-/*   Updated: 2026/02/12 10:42:58 by rosvela          ###   ########.fr       */
+/*   Created: 2026/02/03 11:29:48 by rosvela           #+#    #+#             */
+/*   Updated: 2026/02/05 12:27:26 by rosvela          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "libft.h"
 
-int	ft_printf_int(int n)
+t_list	*ft_lstnew(void *content)
 {
-	long	num;
+	t_list	*list;
 
-	num = n;
-	return (ft_putnbr(num));
+	list = malloc(sizeof(t_list));
+	if (!list)
+		return (NULL);
+	list->content = content;
+	list->next = NULL;
+	return (list);
 }

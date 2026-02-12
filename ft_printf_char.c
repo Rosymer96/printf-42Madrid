@@ -1,7 +1,19 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_printf_char.c                                   :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: rosvela <rosvela@student.42madrid.com>     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/02/12 10:50:34 by rosvela           #+#    #+#             */
+/*   Updated: 2026/02/12 10:51:00 by rosvela          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ft_printf.h"
 
-int ft_printf_char(int c)
+int	ft_printf_char(int c)
 {
-    ft_putchar_fd(c, 1);
-    return (1);
+	ft_putchar_fd(c, 1);
+	return (1);
 }

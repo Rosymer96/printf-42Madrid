@@ -1,21 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf_int.c                                    :+:      :+:    :+:   */
+/*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rosvela <rosvela@student.42madrid.com>     +#+  +:+       +#+        */
+/*   By: rosvela <rosvela@student.42madrid.com      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/02/12 10:42:57 by rosvela           #+#    #+#             */
-/*   Updated: 2026/02/12 10:42:58 by rosvela          ###   ########.fr       */
+/*   Created: 2026/02/03 16:01:41 by rosvela           #+#    #+#             */
+/*   Updated: 2026/02/03 16:01:48 by rosvela          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "libft.h"
 
-int	ft_printf_int(int n)
+void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 {
-	long	num;
+	unsigned int	i;
 
-	num = n;
-	return (ft_putnbr(num));
+	if (!s || !f)
+		return ;
+	i = 0;
+	while (s[i] != '\0')
+	{
+		f(i, &s[i]);
+		i++;
+	}
 }

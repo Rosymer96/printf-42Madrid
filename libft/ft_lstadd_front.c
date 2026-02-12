@@ -1,21 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf_int.c                                    :+:      :+:    :+:   */
+/*   ft_lstadd_front.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rosvela <rosvela@student.42madrid.com>     +#+  +:+       +#+        */
+/*   By: rosvela <rosvela@student.42madrid.com      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/02/12 10:42:57 by rosvela           #+#    #+#             */
-/*   Updated: 2026/02/12 10:42:58 by rosvela          ###   ########.fr       */
+/*   Created: 2026/02/03 11:09:49 by rosvela           #+#    #+#             */
+/*   Updated: 2026/02/05 12:27:47 by rosvela          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "libft.h"
 
-int	ft_printf_int(int n)
+void	ft_lstadd_front(t_list **lst, t_list *new)
 {
-	long	num;
-
-	num = n;
-	return (ft_putnbr(num));
+	if (!new)
+		return ;
+	new->next = *lst;
+	*lst = new;
 }

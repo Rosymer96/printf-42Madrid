@@ -1,21 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf_int.c                                    :+:      :+:    :+:   */
+/*   ft_lstiter.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rosvela <rosvela@student.42madrid.com>     +#+  +:+       +#+        */
+/*   By: rosvela <rosvela@student.42madrid.com      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/02/12 10:42:57 by rosvela           #+#    #+#             */
-/*   Updated: 2026/02/12 10:42:58 by rosvela          ###   ########.fr       */
+/*   Created: 2026/02/03 14:05:28 by rosvela           #+#    #+#             */
+/*   Updated: 2026/02/05 12:28:47 by rosvela          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "libft.h"
 
-int	ft_printf_int(int n)
+void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
-	long	num;
+	t_list	*tmp;
 
-	num = n;
-	return (ft_putnbr(num));
+	if (!lst || !f)
+		return ;
+	tmp = lst;
+	while (tmp != NULL)
+	{
+		f(tmp->content);
+		tmp = tmp->next;
+	}
 }
